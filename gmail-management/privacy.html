@@ -4,13 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>プライバシーポリシー | gmail-management</title>
+  <meta name="description" content="gmail-management が Google アカウントのデータをどう扱うかの説明">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-name" href="/">Kaoru153</a>
+      <nav class="site-nav" aria-label="gmail-management">
+        <a href="/gmail-management/">gmail-management</a>
+        <a href="/gmail-management/privacy.html" aria-current="page">プライバシーポリシー</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
     <h1>プライバシーポリシー</h1>
-    <p class="muted">制定日: 2026年11月7日</p>
-    <p>このポリシーは、Kaoru153（以下「開発者」）が作成した Gmail 整理ツール「<a href="./">gmail-management</a>」（以下「本ツール」）が、Google アカウントのデータをどう扱うかを説明するものです。</p>
+    <p class="muted">制定日: 2026年11月7日 · 最終改定日: 2026年11月8日</p>
+    <p>このポリシーは、Kaoru153（以下「開発者」）が作成した Gmail 整理ツール「<a href="/gmail-management/">gmail-management</a>」（以下「本ツール」）が、Google アカウントのデータをどう扱うかを説明するものです。</p>
 
     <h2>1. 取得するデータ</h2>
     <p>本ツールは、利用者が許可した Google アカウントから、Gmail API を通じて次のデータを取得します。</p>
@@ -36,6 +48,7 @@
     <ul>
       <li><code>tokens/</code>: 認証情報（OAuth のアクセストークンとリフレッシュトークン）</li>
       <li><code>data/&lt;アカウント&gt;.sqlite3</code>: メール ID と送信元（アドレスと表示名）の対応表。2 回目以降の取得を速くするためのキャッシュ</li>
+      <li><code>data/&lt;アカウント&gt;-senders-&lt;集計方法&gt;.csv</code>: 送信元ごとの件数・表示名と、付けるラベル名の一覧。ラベル付けの対象を利用者が確認するため</li>
       <li><code>data/backups/</code>: 既読にしたメールの ID の控え（元に戻すため）</li>
     </ul>
     <p>これらは利用者が削除するまで PC 上に残ります。開発者のサーバーや第三者のサービスには送信も保存もしません。</p>
@@ -55,13 +68,19 @@
 
     <h2>7. このポリシーの変更</h2>
     <p>内容を変える場合は、このページを更新し、改定日を記載します。</p>
+    <ul class="muted">
+      <li>2026年11月8日: 「3. 保存場所と保存期間」に、送信元の一覧（CSV）を追加</li>
+      <li>2026年11月7日: 制定</li>
+    </ul>
 
     <h2>8. お問い合わせ</h2>
     <p><a href="https://github.com/Kaoru153/Kaoru153.github.io/issues">GitHub の Issues</a> からご連絡ください。</p>
-
-    <footer>
-      <a href="./">gmail-management</a> · 運営: Kaoru153
-    </footer>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="/gmail-management/">gmail-management</a> · 運営: <a href="https://github.com/Kaoru153">Kaoru153</a>
+    </div>
+  </footer>
 </body>
 </html>

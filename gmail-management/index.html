@@ -5,9 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>gmail-management</title>
   <meta name="description" content="複数の Gmail アカウントをコマンドラインから整理する個人用ツール">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-name" href="/">Kaoru153</a>
+      <nav class="site-nav" aria-label="gmail-management">
+        <a href="/gmail-management/" aria-current="page">gmail-management</a>
+        <a href="/gmail-management/privacy.html">プライバシーポリシー</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
     <h1>gmail-management</h1>
     <p class="lead">自分の複数の Gmail アカウントを、コマンドラインからまとめて整理するための個人用ツールです。開発者本人のアカウントでのみ使っており、一般には配布していません。</p>
@@ -19,6 +30,21 @@
       <li>何度も届く送信元ごとにラベルを作って付け、今後届くメールも同じラベルに振り分けるフィルタを作る</li>
       <li>不要になったラベルと、そのラベルを付けるフィルタを削除する</li>
     </ul>
+
+    <h2>しないこと</h2>
+    <ul>
+      <li>メール本文と添付ファイルは取得しません。読み取るのはヘッダーのうち送信元・件名・日付だけです</li>
+      <li>メールの送信、削除、ゴミ箱への移動はしません</li>
+      <li>取得した情報を開発者や第三者のサーバーへ送りません。ツールは利用者の PC 上だけで動きます</li>
+    </ul>
+
+    <h2>使い方の流れ</h2>
+    <ol>
+      <li>初回だけ、ブラウザで Google アカウントにログインし、下記の権限を許可します。アカウントごとに行うと、複数のアカウントを登録できます。</li>
+      <li>許可すると発行される認証情報（トークン）は、利用者の PC 上にだけ保存されます。</li>
+      <li>以後はコマンドで操作します。既読化・ラベル付け・削除のコマンドは、<code>--dry-run</code> を付けると何も変更せずに対象だけを表示します。</li>
+      <li>未読メールをまとめて既読にするときは、元に戻せるように対象メールの ID を PC 上に控えます。</li>
+    </ol>
 
     <h2>Google アカウントに求める権限</h2>
     <div class="table-wrap">
@@ -38,14 +64,22 @@
         </tbody>
       </table>
     </div>
-    <p>本ツールはメール本文と添付ファイルを取得しません。ツールは利用者の PC 上で動き、取得した情報を開発者や第三者のサーバーへ送ることはありません。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+    <p><code>gmail.modify</code> はメールの読み取りや変更を広く許す権限ですが、本ツールが使うのは上の表の操作だけです。データの保存場所と削除方法は<a href="/gmail-management/privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+    <p>アクセス権は、Google アカウントの「<a href="https://myaccount.google.com/connections">サードパーティ製のアプリとサービス</a>」からいつでも取り消せます。</p>
+
+    <h2>「Google はこのアプリを確認していません」の表示について</h2>
+    <div class="note">
+      <p>本ツールは開発者本人だけが使う個人用ツールのため、Google のアプリ審査を受けていません。そのため、ログイン時にこの警告が表示されます。開発者以外の方の利用は想定していません。</p>
+    </div>
 
     <h2>お問い合わせ</h2>
     <p><a href="https://github.com/Kaoru153/Kaoru153.github.io/issues">GitHub の Issues</a> からご連絡ください。</p>
-
-    <footer>
-      <a href="privacy.html">プライバシーポリシー</a> · 運営: Kaoru153
-    </footer>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="/gmail-management/privacy.html">プライバシーポリシー</a> · 運営: <a href="https://github.com/Kaoru153">Kaoru153</a>
+    </div>
+  </footer>
 </body>
 </html>

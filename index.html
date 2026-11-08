@@ -4,15 +4,112 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kaoru153</title>
+  <meta name="description" content="Kaoru153 のプロフィールと、作ったもの（コンペ・ツール）の紹介">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-name" href="/">Kaoru153</a>
+    </div>
+  </header>
+
   <main>
     <h1>Kaoru153</h1>
-    <p>個人で作っているツールの説明ページです。</p>
-    <ul>
-      <li><a href="/gmail-management/">gmail-management</a> — 複数の Gmail アカウントをコマンドラインから整理するツール</li>
+    <p class="lead">Kaggle・SIGNATE のコンペに参加しながら、Claude Code を使って、コンペの進め方を支える仕組みや、身の回りの作業を楽にする個人用ツールを作っています。</p>
+    <ul class="profile-links">
+      <li><a href="https://github.com/Kaoru153">GitHub</a></li>
+      <li><a href="https://www.kaggle.com/kao153">Kaggle</a></li>
     </ul>
+
+    <h2>プロジェクト</h2>
+    <p class="muted">リポジトリは非公開のため、概要だけを載せています。</p>
+
+    <h3>コンペ</h3>
+    <div class="cards">
+      <article class="card">
+        <h4>第5回 空戦AIチャレンジ（ユース部門）</h4>
+        <p class="tags"><span>SIGNATE</span><span>開催中</span></p>
+        <p>空対空戦闘を簡易的に表したシミュレータで、戦闘機 4 機と護衛対象機 1 機からなる編隊のうち、戦闘機の行動を判断するエージェントを作っています。</p>
+      </article>
+      <article class="card">
+        <h4>NEDO Challenge, Baggage-Loading Robot</h4>
+        <p class="tags"><span>SIGNATE</span><span>銀メダル</span><span>18 位 / 591</span></p>
+        <p>航空機のコンテナに手荷物を積み付ける順序と置き場所を決めるアルゴリズム。空間の埋まり具合、重心の低さ、積み付けのルール、荷崩れしにくさで評価されるコンペです。</p>
+      </article>
+    </div>
+
+    <h3>コンペ支援ツール</h3>
+    <div class="cards">
+      <article class="card">
+        <h4>ds-hub</h4>
+        <p class="tags"><span>Kaggle</span><span>SIGNATE</span><span>ダッシュボード</span></p>
+        <p>参加するコンペを台帳にまとめ、開催中のコンペ、自分の順位、締切、コンペごとのリポジトリの状況を集めて一つの画面で見られるようにした管理拠点。参加する前に、開催中のコンペを絞り込んで比べることもできます。</p>
+      </article>
+      <article class="card">
+        <h4>kaggle-manage</h4>
+        <p class="tags"><span>Kaggle</span><span>Claude Code スキル</span></p>
+        <p>Kaggle 公式の CLI を実際のサービスで試して挙動と落とし穴を記録し、データの取得、提出、Notebook の実行までを Claude Code のスキルにまとめました。</p>
+      </article>
+      <article class="card">
+        <h4>kaggle-meta-research</h4>
+        <p class="tags"><span>Kaggle</span><span>データ分析</span><span>Claude Code スキル</span></p>
+        <p>Kaggle 公式の公開データ Meta Kaggle を使い、シミュレーション系・最適化系コンペの上位解法と、386 コンペ・約 53 万チームの最終提出の選び方を調べて、コンペの進め方の手引きにまとめました。</p>
+      </article>
+    </div>
+
+    <h3>個人ツール</h3>
+    <div class="cards">
+      <article class="card">
+        <h4><a href="/gmail-management/">gmail-management</a></h4>
+        <p class="tags"><span>Gmail API</span><span>CLI</span></p>
+        <p>複数の Gmail アカウントをコマンドラインから整理する個人用ツール。送信元ごとのラベル付けと振り分けフィルタの作成、未読メールの一括既読などができます。</p>
+        <p class="links">
+          <a href="/gmail-management/">概要</a>
+          <a href="/gmail-management/privacy.html">プライバシーポリシー</a>
+        </p>
+      </article>
+      <article class="card">
+        <h4>Claude 作業部屋</h4>
+        <p class="tags"><span>Claude Code</span><span>ダッシュボード</span></p>
+        <p>Claude Code がいま何をしているかを、ブラウザで眺められるダッシュボード。セッションごとの作業の様子、実行中のコマンド、CPU・メモリ・GPU の使用状況、作ったファイルを一覧でき、操作の許可や質問にも画面から答えられます。</p>
+      </article>
+    </div>
+
+    <h3>予測・分析</h3>
+    <div class="cards">
+      <article class="card">
+        <h4>競馬の着順予想 AI</h4>
+        <p class="tags"><span>機械学習</span><span>開発終了（2026年8月）</span></p>
+        <p>JRA・地方競馬の着順を予想する AI。黒字に見えた戦略が、データの読み込みの不具合で答えが混ざった（リークした）結果だったと分かり、約 2,000 通りの条件を並べ替え検定と時系列分割で検証し直した結果、「勝てる条件は見つからなかった」と結論して開発を終えました。</p>
+      </article>
+      <article class="card">
+        <h4>競艇の着順予想 AI</h4>
+        <p class="tags"><span>機械学習</span></p>
+        <p>競馬版で作った検証の仕組みを引き継ぎ、ボートレースのデータ収集から、予測モデル、オッズに表れる市場のずれの分析までを作りました。</p>
+      </article>
+      <article class="card">
+        <h4>FX テクニカル分析ハンドブック</h4>
+        <p class="tags"><span>教材</span><span>可視化</span></p>
+        <p>チャートの見方、テクニカル手法、指標を図解で体系的にまとめた教材と、その図をすべて生成する Python のコード。線を引いて巻き戻しながら練習できるチャートアプリや、設定ファイルに書いた手法の過去検証もあります。値動きの予測や売買の推奨はしません。</p>
+      </article>
+      <article class="card">
+        <h4>パチスロのデータ分析</h4>
+        <p class="tags"><span>データ分析</span><span>可視化</span></p>
+        <p>店舗の公開データ（機種ごとの日別の平均差枚など）を集めて、曜日や特定日ごとの傾向を集計・可視化し、指定した日にねらい目の機種をレポートにするシステム。</p>
+      </article>
+    </div>
+
+    <h2>このサイトについて</h2>
+    <p>プロフィールと、作ったものの紹介です。外部サービスの API を使うツールについては、何ができるか、どの権限を求めるか、データをどう扱うかを公開しています。これらのページは、API の利用登録で求められるホームページとプライバシーポリシーを兼ねています。</p>
+
+    <h2>お問い合わせ</h2>
+    <p><a href="https://github.com/Kaoru153/Kaoru153.github.io/issues">GitHub の Issues</a> からご連絡ください。</p>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap">運営: <a href="https://github.com/Kaoru153">Kaoru153</a></div>
+  </footer>
 </body>
 </html>
